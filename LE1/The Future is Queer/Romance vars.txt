@@ -1,0 +1,312 @@
+The Future is Queer notes
+==================================
+(sorry, these are @SterlingVix's personal notes and are disorganized).
+
+|||||||||||||||||||||
+References
+|||||||||||||||||||||
+Plot DBs:
+* LE1: https://docs.google.com/spreadsheets/d/1wVbBxbyy-3EmOFEYCXp15tblOimY_h4dNFpK9k-ZIqk/edit#gid=1683682449
+* LE2: https://docs.google.com/spreadsheets/d/1p3j2LSGKleZAxowNCc3hFas_8osXB4LOuWEh2ssTfEA/edit#gid=1514446911
+* LE3: https://docs.google.com/spreadsheets/d/1Lvgin45QmutLOUKUEYR8fYblHx4Y2yHLClniVtl9ljc/edit#gid=456292761
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+           Files to check / change
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+||||||||||||||||||||||||||||||||
+           Bools/Ints
+||||||||||||||||||||||||||||||||
+4639 - Bool - SFX.Utility.PlayerInfo.IsFemale
+
+3960 - Bool - SFX.Global_Plots.Henchman_Kaidan.Romance_Active
+3961 - Bool - SFX.Global_Plots.Henchman_Kaidan.Romance_Cancelled
+4169 - Bool - SFX.Global_Plots.Henchman_Liara.Romance_Active
+4281 - Bool - SFX.Global_Plots.Henchman_Ash.Romance_Active
+4282 - Bool - SFX.Global_Plots.Henchman_Ash.Romance_Cancelled
+4686 - Bool - SFX.Global_Plots.Henchman_Liara.Romance_Cancelled
+6528 - Bool - SFX.Global_Plots.Romance_State.Romance_State
+// 6800 - Bool - Achievements
+4604 - Bool - male shep asked Ash for 3some.
+
+
+4685 - Bool - SFX.Global_Plots.Henchman_Ash.Time_Has_Passed
+4687 - Bool - SFX.Global_Plots.Henchman_Liara.Time_Has_Passed
+4688 - Bool - SFX.Global_Plots.Henchman_Kaidan.Time_Has_Passed
+
+15 - Int - SFX.Global_Plots.Henchman_Kaidan.Romance_Buddy_dialog_count
+16 - Int - SFX.Global_Plots.Henchman_Liara.Romance_Buddy_dialog_count
+17 - Int - SFX.Global_Plots.Henchman_Ash.Romance_Buddy_dialog_count
+
+||||||||||||||||||||||||||||||||
+           Conditions
+||||||||||||||||||||||||||||||||
+143 - PlayerIsMale
+144 - PlayerIsFemale
+
+901   Ashley.Time_for_7_empty_locker
+933   Kaidan.Time_for_7_empty_locker
+932   Liara.Time_for_7_empty_locker
+
+931   Ashley.Time_for_8_culmination
+945   Kaidan.Time_for_8_culmination
+934   Liara.Time_for_8_culmination
+
+
+846   Kaidan.Romance_Buddy_Dialog_Count
+847   Kaidan.Check_Romance/Buddy_less_than_3
+848   Ashley.Check_Ash_and_Liara_Active
+850   Kaidan.Has_Liara_not_been_chosen_and_R/B_count_0
+851   Ashley.Check_Romance_Buddy_dialog_count
+852   Ashley.Romance/Buddy_less_than_3
+
+936   Kaidan.Romance_is_complete
+935   Liara.Romance_is_complete
+
+1628  Ashley_postwake_romance
+1629  Ashley_postwake_nonromance
+1626  Kaidan_postwake_romance
+1627  Kaidan_postwake_nonromance
+
+927   Liara.Chose_Liara_Over_Kaidan
+928   Liara.Chose_Liara_Over_Ashley
+929   Liara.Time_for_Ashley_Confrontation
+930   Liara.Time_for_Kaidan_Confrontation
+
+1114  Liara.End_game_no_romance
+1213  Liara.human_romance_past_point_of_no_return
+1212  Kaidan.human_romance_past_point_of_no_return
+
+1532  Romance_State.No_Romances_Active
+
+
+
+||||||||||||||||||||||||||||||||
+           Transitions
+||||||||||||||||||||||||||||||||
+Search like:
+| | ├─nStateTransition: 2987
+| | ├─nStateTransitionParam: 1
+================================
+
+2143  Set_Romance_active_True
+2144  Set_Romance_active_False
+2145  Set_Romance_cancelled_True
+
+2367  Kaidan.Cancel_Romance
+2770  Ashley.Cancel_Romance
+
+2486  Set_romance_active_True
+2739  Set_Romance_active_True
+
+2784  Set_Ash1_True
+2785  Set_Ash2_True
+2786  Set_Ash3_True
+2787  Set_Ash4_True
+2789  Set_Ash5_True
+
+2813  (?Kaidan?) Set_Romance_active_False
+2830  (Kaidan) Set_Romance_Buddy_dialog_count
+2831  Start_Kaidan_Romance
+2835  Liara.Set_Romance_Buddy_dialog_count
+2840  Set_Kaidan_and_Ashley_romances_false
+2858  (Ash) Set_Romance/Buddy_count <-- don't let this get set to 6.
+2859  Start_Ashley_Romance
+
+2978  Set_Time_Has_Passed_True
+2979  Set_Time_Has_Passed_False
+2980  Set_romance_cancelled_True
+2981  Ashley.Advance_Romance_Buddy_Count
+2982  Set_Time_Has_Passed_True
+2983  Set_Time_Has_Passed_False
+2984  Set_Time_Has_Passed_True
+2985  Set_Time_Has_Passed_False
+2986  Set_Time_Has_Passed_For_Romances
+2987  Start_Liara_Romance
+
+5108  Set_Romance_State_True
+
+
+
+
+
+||||||||||||||||||||||||||||||||
+           Changes
+||||||||||||||||||||||||||||||||
+
+
+
+||||||||||||||||||||||||||||||||
+           Kaidan
+||||||||||||||||||||||||||||||||
+143 - PlayerIsMale
+144 - PlayerIsFemale
+
+846   Kaidan.Romance_Buddy_Dialog_Count
+847   Kaidan.Check_Romance/Buddy_less_than_3
+850   Kaidan.Has_Liara_not_been_chosen_and_R/B_count_0
+933   Kaidan.Time_for_7_empty_locker
+936   Kaidan.Romance_is_complete
+945   Kaidan.Time_for_8_culmination
+1212  Kaidan.human_romance_past_point_of_no_return
+1626  Kaidan_postwake_romance
+1627  Kaidan_postwake_nonromance
+
+1532  Romance_State.No_Romances_Active
+
+BIOA_NOR10_06kaidan_DSG - e378 - remove node, & R487
+BIOA_NOR10_06kaidan_DSG - r190 - change cnd 143 (playerIsMale) to "cancelled romance"
+bioa_nor10_06kaidan_dsg - e313 - Remove trans 2858 (don't set Ash buddy count to 6)
+bioa_nor10_06lockerk_DSG - r190 - change cnd 143 (playerIsMale) to "cancelled romance"
+bioa_nor10_06lockerk_DSG - e86 - remove female coditional? This is optional, and would misgender men...
+bioa_nor10_06lockerk_DSG - e313 - remove set Ash count to 6.
+bioa_nor10_06lockerk_DSG - e378 - remove node, & r487
+bioa_nor10_06lockerk_DSG - e432 - remap from r529 to r528
+
+bioa_nor10_
+bioa_nor10_
+bioa_nor10_
+bioa_nor10_
+bioa_nor10_
+bioa_nor10_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+||||||||||||||||||||||||||||||||
+           Ash
+||||||||||||||||||||||||||||||||
+// Conditionals
+143 - PlayerIsMale
+144 - PlayerIsFemale
+
+851   Ashley.Check_Romance_Buddy_dialog_count
+852   Ashley.Romance/Buddy_less_than_3
+901   Ashley.Time_for_7_empty_locker
+931   Ashley.Time_for_8_culmination
+1532  Romance_State.No_Romances_Active
+1628  Ashley_postwake_romance
+1629  Ashley_postwake_nonromance
+
+// Transition
+2770  Ashley.Cancel_Romance
+2784  Set_Ash1_True
+2785  Set_Ash2_True
+2786  Set_Ash3_True
+2787  Set_Ash4_True
+2789  Set_Ash5_True
+2858  (Ash) Set_Romance/Buddy_count <-- don't let this get set to 6.
+2859  Start_Ashley_Romance
+2981  Ashley.Advance_Romance_Buddy_Count
+
+2144  Set_Romance_active_False
+2145  Set_Romance_cancelled_True
+2739  Set_Romance_active_True
+2813  (?Kaidan?) Set_Romance_active_False
+2840  Set_Kaidan_and_Ashley_romances_false
+2978  Set_Time_Has_Passed_True
+2979  Set_Time_Has_Passed_False
+2980  Set_romance_cancelled_True
+
+2982  Set_Time_Has_Passed_True
+2983  Set_Time_Has_Passed_False
+2984  Set_Time_Has_Passed_True
+2985  Set_Time_Has_Passed_False
+2986  Set_Time_Has_Passed_For_Romances
+5108  Set_Romance_State_True
+
+
+2143  Set_Romance_active_True
+2486  Set_romance_active_True
+
+
+4281 - Bool - SFX.Global_Plots.Henchman_Ash.Romance_Active
+4639 - Bool - SFX.Utility.PlayerInfo.IsFemale
+
+
+
+=======================
+Changes in: BIOA_NOR10_11ash_DSG_LOC_INT.pcc
+
+* 152212 - romance scene.
+** Don't set this (or set it early?) to repeat?
+* R492 125691 rejected ash for liara
+E334 152319 T5108
+E309 126562 T2770
+e263 t2770
+e1 t2859 - start romance - cnd 906 includes !female
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+||||||||||||||||||||||||||||||||
+           Liara
+||||||||||||||||||||||||||||||||
+143 - PlayerIsMale
+144 - PlayerIsFemale
+
+927   Liara.Chose_Liara_Over_Kaidan
+928   Liara.Chose_Liara_Over_Ashley
+929   Liara.Time_for_Ashley_Confrontation
+930   Liara.Time_for_Kaidan_Confrontation
+932   Liara.Time_for_7_empty_locker
+934   Liara.Time_for_8_culmination
+935   Liara.Romance_is_complete
+1114  Liara.End_game_no_romance
+1213  Liara.human_romance_past_point_of_no_return
+1532  Romance_State.No_Romances_Active
+
+
+(also BIOA_NOR10_06lockerl_DSG_LOC_INT.pcc)
+(also BIOA_NOR10_08liara_DSG_LOC_INT.pcc)
+      BIOA_NOR10_09liara_DS2_LOC_INT.pcc
+===========================================
+E111 - 123580 Remove this node
+E117 - 123586 Remove this node
+E125 - 123590 Remove this node
+E128 - 123943 Remove this node
+E134 - 123591 Remove this node
+E131 - should Not reach this
+E138 - should Not reach this
+E139 - should Not reach this
+E154 - 123963 Don't run T2840 (set Ash/Kaidan romance false)
+E135 - 152303 Use as default node (remove E136)
+E129 - 152300 Use as default node
+E142 - Added T2813 (seems like a mistake that it was missing)
+
+
+
+
+
+
+
+
+
