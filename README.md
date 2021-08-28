@@ -5,7 +5,7 @@ https://www.glaad.org/resourcelist
 `The Future is Poly and Queer` (TFPQ) is an open source mod for non-monogamous non-heteronormative relationships in Mass Effect: Legendary Edition.
 
 `The Future is Poly and Queer` uses (the excellent!) [ME3 TweaksModManager and Legendary Explorer](https://github.com/ME3Tweaks) to create and package mods for distribution.
-> NOTE: The Mod ID (for ME3Tweaks) is `4730`. I intend to use the `4730`, `4740`, and maybe `4750` Mod IDs.
+> NOTE: The Mod ID (for ME3Tweaks) is `4740`.
 
 # Why open source?
 Because software works better with community support. If a mod developer likes this mod and wants to mod the mod -- either through their own extension or by contributing to this source code -- Open Source supports that.
